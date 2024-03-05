@@ -1,0 +1,237 @@
+@font-face {
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(assets/fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+:root {
+  --color-bittersweet: hsl(4, 100%, 67%);
+  --color-orange: #ff6a3a;
+  --color-bright-pink: #ff527b;
+
+  --color-dark-slate-grey: hsl(234, 29%, 20%);
+  --color-charcoal-grey: hsl(235, 18%, 26%);
+  --color-grey: hsl(231, 7%, 60%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark-slate-grey);
+}
+
+.main {
+  background-color: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 4rem;
+}
+
+.sign-up-page {
+  display: flex;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5rem;
+}
+
+.newsletter__title,
+.success-subscribing__title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 100%;
+}
+
+.newsletter__description {
+  line-height: 150%;
+}
+
+.newsletter__list {
+  list-style-type: none;
+}
+
+.newsletter__list-item {
+  margin-bottom: 1.5rem;
+}
+
+.newsletter__list-item-icon {
+  margin-right: 1.5rem;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter__label-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter__label {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.newsletter__label--error {
+  color: var(--color-bittersweet);
+  font-weight: 400;
+}
+
+.newsletter__input {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-grey);
+}
+.newsletter__input:hover {
+  cursor: pointer;
+}
+
+.newsletter__input:focus {
+  border: 1px solid var(--color-dark-slate-grey);
+  color: var(--color-dark-slate-grey);
+  outline: none;
+}
+
+.newsletter__button,
+.success-subscribing__dismiss-button {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--color-dark-slate-grey);
+  color: var(--color-white);
+  font-weight: 700;
+  transition: background-color 1s;
+}
+
+.newsletter__button:hover,
+.success-subscribing__dismiss-button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-orange),
+    var(--color-bright-pink)
+  );
+
+  box-shadow: 0px 10px 20px rgba(255, 98, 87, 0.75);
+}
+
+/*** SUCCESS MESSAGE ***/
+
+.success-subscribing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 50rem;
+  height: 52rem;
+  padding: 5rem;
+}
+.success-subscribing__icon {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
+.success-subscribing__description {
+  margin: 4rem 0;
+  line-height: 150%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    padding: 0;
+    border-radius: 0;
+  }
+  .sign-up-page {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .newsletter {
+    padding: 2.5rem;
+    max-width: 37.5rem;
+  }
+
+  .newsletter__title {
+    font-size: 4.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter__list {
+    margin: 2.5rem 0;
+  }
+
+  .newsletter__list-item {
+    margin-bottom: 1rem;
+    display: flex;
+    line-height: 125%;
+  }
+  .newsletter__list-item-icon {
+    margin-right: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .success-subscribing {
+    padding: 2.5rem;
+    width: fit-content;
+  }
+
+  .success-subscribing__title {
+    font-size: 4.2rem;
+  }
+  .success-subscribing__description {
+    margin: 2rem 0;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main {
+    font-size: 1.4rem;
+  }
+  .newsletter {
+    padding: 1.75rem;
+  }
+  .newsletter__title {
+    font-size: 4rem;
+  }
+
+  .newsletter__image {
+    width: fit-content;
+  }
+}
+
+.hidden {
+  display: none;
+}
